@@ -1,0 +1,10 @@
+<h1><%= @user.name %></h1>
+<dl>
+  <dt>Email</dt>
+  <dd><%= mail_to @user.email %></dd>
+  <% @user.addresses.each_with_index do |address, index| %>
+    <dt>Address <%= index + 1 %>:</dt>
+    <dd><%= address.to_s.gsub("\n", "<br>").html_safe %></dd>
+  <% end %>
+</dl>
+
